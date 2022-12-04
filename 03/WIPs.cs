@@ -1,5 +1,5 @@
 
-public class Day02
+public class Day03
 {
     public void v1(string[] s)
     {
