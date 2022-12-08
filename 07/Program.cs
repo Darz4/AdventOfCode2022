@@ -21,7 +21,5 @@ foreach (var cmdLine in cmdLines)
 
 var dirSizes = dirFiles.ToDictionary(x => x.Key, x => dirFiles.Where(e => e.Key.StartsWith(x.Key)).SelectMany(x => x.Value).Sum(e => e.Item2));
 
-foreach (var dirSize in dirSizes)
-    Console.WriteLine($"{dirSize.Key}  ({dirSize.Value})");
-
 Console.WriteLine(dirSizes.Where(x => x.Value <= 100000).Sum(x => x.Value));
+Console.WriteLine(dirSizes.Where(x => x.Value >= dirSizes["/"] - 40000000).Min(x => x.Value));
